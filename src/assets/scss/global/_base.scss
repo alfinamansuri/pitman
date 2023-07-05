@@ -1,0 +1,187 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased; 
+  -moz-font-smoothing: antialiased; 
+  -o-font-smoothing: antialiased;
+}
+body{
+  margin: 0; font-family: $secondary-font; color:$dark-gray;@include rem-fallback(font-size,18) ;
+  height:100%;
+  font-weight:400;
+  -webkit-font-smoothing: antialiased; 
+  -moz-font-smoothing: antialiased; 
+  -o-font-smoothing: antialiased;
+  &::-moz-selection{
+      background-color:$blue;
+      color:$white;
+  }
+  &::selection{
+      background-color:$blue;
+      color:$white;
+  }
+}
+
+ul{
+  list-style-type:none;
+  padding: 0;
+  margin: 0;
+}
+
+
+a , button{
+  cursor:pointer;
+  @include transition(all 0.3s);
+}
+a{
+  &:hover{
+      text-decoration: none;
+  }
+  &:focus{
+      outline:none;
+  }
+}
+
+button{
+  &:hover , &:focus{
+      outline: none;
+  }
+}
+
+input{
+  &:focus{
+      outline:none;
+  }
+}
+
+.wrapper{
+  min-height: 100%;
+  @include rem-fallback(padding-top,100);
+  @include transition(transform 0.3s);
+  @include bp(sm-max){
+      @include rem-fallback(padding-top,85);
+  }
+
+}
+
+.container{
+    
+    @include rem-fallback(max-width,1440);
+    @include rem-fallback(padding,0,15);
+    margin:0 auto;
+}
+.max-container{
+    @include rem-fallback(max-width,1300);
+    margin:0 auto;
+}
+
+
+.pull-right{
+  float: right!important;
+}
+
+.hidden-md{
+  @include bp(md-max){
+      display:none !important;
+  }
+}
+
+.visible-md{
+  display:none;
+  @include bp(md-max){
+      display:block !important;
+  }
+}
+
+.btn {
+  @include rem-fallback(font-size ,18);
+  line-height:1.2;
+ font-family: $primary-font; text-align: center; display: inline-flex; align-items: center; justify-content: center; box-shadow: none !important; outline: none !important; 
+ @include rem-fallback(padding,11,33);border: 0; transition: all 0.3s; cursor: pointer; @include rem-fallback(border-radius,25); }
+.primary-btn{background-color: $orange; color: $white;border:1px solid transparent}
+.primary-btn:hover{background-color:$white;border-color:$orange;color:$orange;}   
+
+
+
+/* home-page */
+
+.banner-section{
+    @include rem-fallback(padding,20,0);
+    height:690px;
+    background-image: url(../../images/banner-bg.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:bottom;
+    h1{
+        @include rem-fallback(font-size,24);
+    }
+    .container{
+        height:100%;
+        .max-container{
+            height:100%;
+            .inner-banner{
+                height:100%;
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+        }
+    }
+    .banner-detail{
+        flex:0 0 50%;
+        max-width:50%;
+        @include rem-fallback(padding-right,20);
+        color:$white;
+        text-align:left;
+        display:flex;
+        align-items:center;
+       .inner-detail{
+           max-width:375px;
+           width:100%;
+           i{
+               display:inline-block;
+               @include rem-fallback(width,140);
+               img{
+                   width:100%;
+               }
+
+           }
+
+       }
+    }
+    .banner-form{
+        flex:0 0 50%;
+        max-width:50%;
+        @include rem-fallback(padding-left,20);
+        display: flex;
+        align-items: center;
+    }
+}
+.inner-form{
+    @include rem-fallback(border-radius,20);
+    background-color: $white;
+    color:$dark-gray;
+    @include rem-fallback(padding,30);
+    @include rem-fallback(max-width,500);
+    margin:0 auto;
+
+    .form-header{
+        @include rem-fallback(margin-bottom,20);
+        h3{
+            font-family:$primary-font;
+        }
+
+    }
+
+}
+

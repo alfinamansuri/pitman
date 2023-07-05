@@ -1,0 +1,92 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	margin: 0;
+	@include rem-fallback(margin,0,0,16);
+}
+h1 {
+	@include rem-fallback(font-size,52);
+	line-height:1.2;
+	@include rem-fallback(margin,0,0,22);
+}
+
+h2{
+	@include rem-fallback(font-size,40);
+	line-height:1.2;
+	@include rem-fallback(margin,0,0,22);
+	
+}
+
+h3{
+	@include rem-fallback(font-size,30);
+	line-height:1.2;
+	@include rem-fallback(margin,0,0,30);
+
+}
+h4{
+	@include rem-fallback(font-size,24);
+	line-height:1.2;
+	@include rem-fallback(margin,0,0,30);
+
+}
+h5{
+	@include rem-fallback(font-size,16);
+	line-height:1.2;
+	@include rem-fallback(margin,0,0,30);
+
+}
+
+p {
+	@include rem-fallback(font-size,20);
+	line-height:1.2;
+	@include rem-fallback(margin,0,0,16);
+	
+	font-weight: 300;
+}
+
+i,em{
+	font-style: normal;
+}
+
+a{
+	@include transition(0.3s);
+}
+
+.primary-btn{
+	@include rem-fallback(font-size,14);
+	@include rem-fallback(line-height,18);
+	@include rem-fallback(padding,10,30);
+	@include rem-fallback(height,44);
+	@include transition(all 0.3s);
+	color:$white;
+	width:100%;
+	border:1px solid transparent;
+	font-weight: 400;
+	background-color:$blue;
+	display:flex;
+	align-items: center;
+	justify-content:center;
+	text-align: center;
+	border-radius: 3px;
+	position: relative;
+	z-index: 1;
+	transition: 0.3s all;
+	&:hover{
+		border-color:$blue;
+		background-color: transparent;
+		color:$blue;
+	}
+	
+
+
+
+}
+
+
+
+.dk-select-options{
+	z-index: 2;
+}

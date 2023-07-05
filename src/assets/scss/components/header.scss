@@ -1,0 +1,56 @@
+.header{
+
+    @include rem-fallback(padding,20,0);
+    .header-inner-wrap{
+        display: flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        .logo{
+            @include rem-fallback(width,200);
+            display:inline-block;
+            img{
+                width:100%;
+            }
+        }
+    }
+    .header-nav{
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        margin:0 -20px;
+
+        li{
+            @include rem-fallback(padding,0,20);
+            a{
+                color:$dark-gray;
+                text-decoration:none;
+                @include rem-fallback(font-size,18);
+                line-height:1.2;
+                font-family:$secondary-font;
+                letter-spacing:0;
+                &:hover{
+                    color:$blue;
+                }
+            }
+
+        }
+    }
+    .call-link{
+        color:$blue;
+        font-family:$primary-font;
+        @include rem-fallback(font-size,20);
+        line-height:1.2;
+        a{
+            color:$blue;
+            font-family:$primary-font;
+            @include rem-fallback(font-size,20);
+            line-height:1.2;
+            text-decoration:none;
+            &:hover{
+                color:$dark-gray;
+            }
+        }
+
+    }
+}

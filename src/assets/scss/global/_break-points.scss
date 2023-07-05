@@ -1,0 +1,141 @@
+//Break points
+@mixin bp($point) {
+    $xxxs-max: "(max-width: 374px)";
+    $xxs-max: "(max-width: 479px)";
+    $xs-max: "(max-width: 575px)";
+    $ssm-max: "(max-width: 679px)";
+    $sm-max: "(max-width: 767px)";
+    $sm-min: "(min-width: 768px)";
+    $smd-max: "(max-width: 991px)";
+    $smd-min: "(min-width: 991px)";
+    $smd-min-2: "(min-width: 992px)";
+    $lmd-max: "(max-width: 1024px)";
+    $md-max: "(max-width: 1023px)";
+    $lg-max: "(max-width: 1199px)";
+    $lgl-max: "(max-width: 1279px)";
+    $slg-max: "(max-width: 1359px)";
+    $llg-max: "(max-width:1366px)";
+    $xlg-max: "(max-width: 1439px)";
+    $xxlg-max: "(max-width: 1440px)";
+    $xxlg-min: "(min-width:1440px)";
+    $xxxl-min: "(min-width:1680px)";
+    $xxl-max: "(max-width:1600px)";
+    $xxxl-max: "(max-width:1699px)";
+    $xxxlg-max: "(max-width:1740px)";
+    $xxxxl-max: "(max-width:1919px)";
+    @if $point==xxxs-max {
+        @media #{$xxxs-max} {
+            @content;
+        }
+    }
+    @else if $point==xxs-max {
+        @media #{$xxs-max} {
+            @content;
+        }
+    }
+    @else if $point==xs-max {
+        @media #{$xs-max} {
+            @content;
+        }
+    }
+    @else if $point==sm-min {
+        @media #{$sm-min} {
+            @content;
+        }
+    }
+    @else if $point==ssm-max {
+        @media #{$ssm-max} {
+            @content;
+        }
+    }
+    @else if $point==sm-max {
+        @media #{$sm-max} {
+            @content;
+        }
+    }
+    @else if $point==smd-min {
+        @media #{$smd-min} {
+            @content;
+        }
+    }
+    @else if $point==smd-min-2 {
+        @media #{$smd-min-2} {
+            @content;
+        }
+    }
+    @else if $point==smd-max {
+        @media #{$smd-max} {
+            @content;
+        }
+    }
+    @else if $point==md-max {
+        @media #{$md-max} {
+            @content;
+        }
+    }
+    @else if $point==lmd-max {
+        @media #{$lmd-max} {
+            @content;
+        }
+    }
+    @else if $point==lg-max {
+        @media #{$lg-max} {
+            @content;
+        }
+    }
+    @else if $point==lgl-max {
+        @media #{$lgl-max} {
+            @content;
+        }
+    }
+    @else if $point==slg-max {
+        @media #{$slg-max} {
+            @content;
+        }
+    }
+    @else if $point==llg-max {
+        @media #{$llg-max} {
+            @content;
+        }
+    }
+    @else if $point==xlg-max {
+        @media #{$xlg-max} {
+            @content;
+        }
+    }
+    @else if $point==xxlg-max {
+        @media #{$xxlg-max} {
+            @content;
+        }
+    }
+    @else if $point==xxl-max {
+        @media #{$xxl-max} {
+            @content;
+        }
+    }
+    @else if $point==xxxl-max {
+        @media #{$xxxl-max} {
+            @content;
+        }
+    }
+    @else if $point==xxxlg-max {
+        @media #{$xxxlg-max} {
+            @content;
+        }
+    }
+    @else if $point==xxxxl-max {
+        @media #{$xxxxl-max} {
+            @content;
+        }
+    }
+    @else if $point==xxxl-min {
+        @media #{$xxxl-min} {
+            @content;
+        }
+    }
+    @else if $point==xxlg-min {
+        @media #{$xxlg-min} {
+            @content;
+        }
+    }
+}
