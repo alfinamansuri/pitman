@@ -1,4 +1,16 @@
+html {
+    scroll-padding-top: 91px;
+    scroll-behavior: smooth;
+
+  }
+
 .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    z-index: 10;
 
     @include rem-fallback(padding,20,0);
     .header-inner-wrap{

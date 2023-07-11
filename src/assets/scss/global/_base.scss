@@ -66,7 +66,7 @@ input{
 
 .wrapper{
   min-height: 100%;
-  @include rem-fallback(padding-top,100);
+  @include rem-fallback(padding-top,92);
   @include transition(transform 0.3s);
   @include bp(sm-max){
       @include rem-fallback(padding-top,85);
@@ -83,6 +83,7 @@ input{
 .max-container{
     @include rem-fallback(max-width,1300);
     margin:0 auto;
+    @include rem-fallback(padding,0,15);
 }
 
 
@@ -108,8 +109,63 @@ input{
   line-height:1.2;
  font-family: $primary-font; text-align: center; display: inline-flex; align-items: center; justify-content: center; box-shadow: none !important; outline: none !important; 
  @include rem-fallback(padding,11,33);border: 0; transition: all 0.3s; cursor: pointer; @include rem-fallback(border-radius,25); }
-.primary-btn{background-color: $orange; color: $white;border:1px solid transparent}
-.primary-btn:hover{background-color:$white;border-color:$orange;color:$orange;}   
+ .primary-btn{
+	@include rem-fallback(font-size,18);
+	line-height:1.2;
+	@include rem-fallback(padding,10,30);
+	@include rem-fallback(height,44);
+	@include transition(all 0.3s);
+	color:$white;
+	border:1px solid transparent;
+	font-weight: 400;
+	background-color:$orange;
+	display:flex;
+	align-items: center;
+	justify-content:center;
+	text-align: center;
+	border-radius:100px;
+	position: relative;
+	z-index: 1;
+    transition: 0.3s all;
+    min-width:150px;
+	&:hover{
+		opacity:0.8;
+	}
+}
+.btn-block{
+    text-align:left;
+    @include rem-fallback(margin-top,20);
+}
+
+.title{
+    position: relative;
+    @include rem-fallback(padding-bottom,15);
+    @include rem-fallback(margin-bottom,40);
+    &:after{
+        content:"";
+        display: inline-block;
+        position:absolute;
+        bottom:0;
+        left:50%;
+        transform:translateX(-50%);
+        background-image:url(../../images/white-title.svg);
+        @include rem-fallback(height,5);
+        @include rem-fallback(width,70);
+    }
+}
+.white-title{
+    color:$white;
+    &:after{
+       background-image:url(../../images/white-title.svg);
+    }
+}
+.black-title{
+    color:$dark-gray;
+    &:after{
+        background-image:url(../../images/black-title.svg);
+     }
+}
+
 
 
 
@@ -125,8 +181,6 @@ input{
     h1{
         @include rem-fallback(font-size,24);
     }
-    .container{
-        height:100%;
         .max-container{
             height:100%;
             .inner-banner{
@@ -135,7 +189,6 @@ input{
                 flex-wrap: wrap;
                 width: 100%;
             }
-        }
     }
     .banner-detail{
         flex:0 0 50%;
@@ -171,17 +224,682 @@ input{
     @include rem-fallback(border-radius,20);
     background-color: $white;
     color:$dark-gray;
-    @include rem-fallback(padding,30);
-    @include rem-fallback(max-width,500);
+    @include rem-fallback(padding,20);
+    @include rem-fallback(min-width,500);
     margin:0 auto;
 
     .form-header{
-        @include rem-fallback(margin-bottom,20);
+        @include rem-fallback(margin-bottom,10);
         h3{
             font-family:$primary-font;
+            @include rem-fallback(margin-bottom,10);
+        }
+        p{
+            @include rem-fallback(font-size,14);
+            font-family: $secondary-font;
+            @include rem-fallback(max-width,335);
+            margin:0 auto;
         }
 
     }
 
 }
+
+/*  home banner tabbing */ 
+
+.MuiTabs-flexContainer{
+    border-bottom:1px solid $gray;
+    
+}
+.MuiTabPanel-root{
+    padding:0 !important;
+}
+.MuiBox-root{
+    border:0 !important;
+}
+
+.MuiTabs-scroller{
+    .MuiButtonBase-root{
+        width:50%;
+        color:$dark-gray;
+        font-family: $primary-font;
+        min-height:30px;
+        @include rem-fallback(font-size,16);
+        text-transform:inherit;
+        letter-spacing:0;
+        padding-left:0;
+        padding-right:0;
+        &.Mui-selected{
+            color:$blue;
+        }
+    }
+}
+.PrivateTabIndicator-colorSecondary-3{
+    background-color: $blue !important;
+    bottom:3px !important;
+}
+
+/* from */ 
+
+.form-group-wrap{
+    @include rem-fallback(margin-bottom,15);
+    .form-group{
+        width:100%;
+        label{
+            @include rem-fallback(font-size,14);
+            line-height:1.2;
+            color:$dark-gray;
+            font-family:$secondary-font;
+            left:-10px;
+            &.Mui-focused{
+                color:$blue;
+            }
+        }
+        input{
+            padding-left:0;
+            padding-right:0;
+            @include rem-fallback(font-size,14);
+            @include rem-fallback(padding-top,20);
+            line-height:1.2;
+            color:$dark-gray;
+            font-family:$secondary-font;
+            &::placeholder{
+                @include rem-fallback(font-size,14);
+                line-height:1.2;
+                color:$dark-gray;
+                font-family:$secondary-font;
+            }
+        }
+        textarea{
+            min-height:50px;
+            @include rem-fallback(font-size,14);
+            line-height:1.2;
+            color:$dark-gray;
+            font-family:$secondary-font;
+            &::placeholder{
+                @include rem-fallback(font-size,14);
+                line-height:1.2;
+                color:$dark-gray;
+                font-family:$secondary-font;
+            }
+        }
+        .form-control{
+            width: 100%;
+           
+        }
+        .css-1ff8729-MuiInputBase-root-MuiFilledInput-root{
+            background-color:transparent;
+            &:before{
+                border-bottom: 1px solid $form-border;
+            }
+            &:hover{
+                &:not(.Mui-disabled, .Mui-error){
+                    &:before{
+                        border-bottom: 1px solid $form-border;
+                    }
+                }
+            }
+        }
+        .css-1ff8729-MuiInputBase-root-MuiFilledInput-root{
+            &::after{
+                border-bottom:1px solid $blue;
+            }
+        }
+        .css-85zwa9-MuiInputBase-root-MuiFilledInput-root{
+            background-color:transparent;
+            padding-left:0;
+            padding-right:0;
+            &:before{
+                border-bottom:1px solid $form-border;
+            }
+            &:hover{
+                    &:before{
+                        border-bottom:1px solid $form-border;
+                    }
+                    &::after{
+                        border-bottom:1px solid $blue;
+                    }
+                // &:not(.Mui-disabled, .Mui-error){
+                //     &:before{
+                //         border-bottom:1px solid $blue;
+                //     }
+                // }
+            }
+        }
+        
+    }
+    &.two-col{
+        display:flex;
+        margin:0 -10px 10px;
+        .form-group{
+            width:50%;
+            padding:0 10px;
+    }
+}
+}
+
+
+
+
+
+
+
+
+
+
+/*end*/
+
+
+
+
+/* review logo block */ 
+.review-block{
+    @include rem-fallback(padding,50,0);
+
+    p{
+        @include rem-fallback(font-size,22);
+
+    }
+}
+
+.inner-review{
+    display:flex;
+    justify-content: center;
+    margin:0 -10px;
+    
+    .review-logo{
+        @include rem-fallback(padding,0,10);
+        i{
+            display:inline-block;
+            width:166px;
+            img{
+                width:100%;
+            }
+        }
+    }
+}
+/*end */
+
+
+/* our-course block */ 
+.our-course-block{
+    @include rem-fallback(padding,50,0);
+    background-color:$blue;
+    border-top-left-radius: 50px;
+    border-top-right-radius:50px;
+    .inner-our-course{
+        margin:0 -10px;
+        display: flex;
+    flex-wrap: wrap;
+    }
+    .course-block{
+        @include rem-fallback(padding,0,10);
+        width:50%;
+        @include rem-fallback(margin-bottom,20);
+
+        .inner-course{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $white;
+            border-radius: 10px;
+            @include rem-fallback(padding,35);
+            .detail{
+                text-align: left;
+            }
+            i{
+                display:inline-block;
+                @include rem-fallback(width,100);
+                @include rem-fallback(margin-right,40);
+            }
+            h4{
+                color:$blue;
+                @include rem-fallback(font-size,22);
+
+            }
+            p{
+                color:$dark-gray;
+                @include rem-fallback(font-size,16);
+                line-height: 1.2;
+            }
+            a{
+                display:inline-block;
+                color:$blue;
+                @include rem-fallback(font-size,16);
+                line-height: 1.2;
+                
+                &:hover{
+                    color:$dark-gray;
+                }
+
+            }
+
+        }
+
+    }
+    .btn-block{
+        text-align: center;
+        a{
+            display:inline-block;
+            text-decoration:none;
+        }
+    }
+}
+
+
+
+/* category-block css */ 
+
+.category-block{
+    @include rem-fallback(padding,50,0);
+    background-color:$white;
+    .cat-listing{
+        margin:0 -10px;
+        display:flex;
+        flex-wrap:wrap;
+        li{
+            width:33.33%;
+            @include rem-fallback(padding,0,10);
+            text-align:left;
+            @include rem-fallback(margin-bottom,20);
+
+        }
+        i{
+            display:inline-block;
+            width:18px;
+            @include rem-fallback(margin-right,10);
+
+            img{
+                width:100%;
+            }
+        }
+        span{
+            display:inline-block;
+            color:$blue;
+            @include rem-fallback(font-size,20);
+            font-family:$secondary-font;
+
+        }
+    }
+
+}
+
+
+
+/* trainne-block */ 
+.trainee-block{
+    background-color: $blue;
+    @include rem-fallback(padding,45,0);
+    color:$white;
+    font-family:$primary-font;
+    .inner-trainee-block{
+        display:flex;
+        justify-content:space-between;
+        position: relative;
+        h3{
+            max-width: 863px;
+            width: 100%;
+            text-align: left;
+            a{
+                color:$white;
+                @include rem-fallback(margin-left,5);
+                &:hover{
+                    color:$orange;
+                }
+            }
+            margin:0;
+        }
+        .trainee-icon{
+            position: absolute;
+            right:0;
+            top:-82px;
+        }
+
+        
+    }
+
+}
+
+
+/* accordion block */ 
+
+.reason-block{
+    background-color: $gray-bg;
+    @include rem-fallback(padding,50,0);
+
+}
+
+
+/* custom accordion */ 
+.accordion-block{
+    display:flex;
+    flex-wrap:wrap;
+    margin:0 -10px;
+    .accordion-col{
+        flex:0 0 50%;
+        max-width:50%;
+        @include rem-fallback(padding,0,10);
+    }
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root{
+    box-shadow: 0px 2px 7px 0px #0000000D !important;
+    margin-bottom:16px !important;
+    &.Mui-expanded{
+        .MuiAccordionSummary-content{
+            p{
+                color:$blue;
+                font-family:$primary-font;
+            }
+        }
+    }
+    .MuiAccordionSummary-content{
+        margin:0;
+        @include rem-fallback(padding,15);
+        p{
+            @include rem-fallback(font-size,18);
+            color:$dark-gray;
+            font-family:$secondary-font;
+            text-align:left;
+            width:100%;
+
+        }
+    }
+
+}
+.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root{
+    padding:0;
+    &.Mui-expanded{
+        border-bottom:1px solid $acc_border;
+        min-height:inherit;
+        padding:0;
+    }
+}
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root{
+    &::first-of-type{
+    @include rem-fallback(margin-bottom,16);
+    }
+
+}
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root{
+    &::before{
+        background-color: $acc_border !important;
+        }
+}
+.css-15v22id-MuiAccordionDetails-root{
+
+    p{
+        @include rem-fallback(font-size,16); 
+        line-height: 1.2;
+        color:$dark-gray;
+        font-family:$secondary-font;
+        text-align:left;
+    }
+}
+.css-yw020d-MuiAccordionSummary-expandIconWrapper{
+    position: absolute;
+    @include rem-fallback(width,15); 
+    @include rem-fallback(height,9); 
+    @include rem-fallback(right,15); 
+ 
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-image: url(../../images/down-arrow.svg);
+    svg{
+        display:none;
+    }
+}
+}
+
+
+/* end */
+
+/* slider block */ 
+
+.slider-block{
+    @include rem-fallback(padding,150,0,50);
+    background-color:$blue;
+    color:$white;
+    background-image:url('../../images/curve.png');
+    background-repeat: no-repeat;
+    background-position:top;
+    background-size:contain;
+    .custom-slider{
+        max-width:1100px;
+        width:100%;
+        margin:0 auto;
+        
+        .slick-slider{
+            @include rem-fallback(padding-bottom,20);
+        }
+
+
+}
+.slick-dots {
+    display:inline-block;
+    width:auto;
+    right:36%;
+    bottom:0;
+    li{
+        @include rem-fallback(width,13);
+        margin:0;
+        button{
+           &:before{
+               
+                color:$dot;
+                @include rem-fallback(font-size,7);
+                opacity: 1;
+            }
+        }
+        &.slick-active{
+            button{
+                &:before{
+                    color:$white;
+                 }
+             }
+           
+        }
+    }
+}
+.slider-item{
+    display:flex;
+    flex-wrap:wrap;
+    margin:0 -20px;
+    width:100%;
+    align-items:center;
+    justify-content: center;
+    .item-img{
+        flex:0 0 30%;
+        max-width:30%;
+        @include rem-fallback(padding,0,20);
+        display:inline-block;
+        img{
+            width:100%;
+
+        }
+    }
+    .slider-detail{
+        flex:0 0 60%;
+        max-width:60%;
+        @include rem-fallback(padding,0,20);
+        p{
+            @include rem-fallback(font-size,18);
+            line-height:1.2;
+            margin-bottom:0;
+        }
+        h4{
+            @include rem-fallback(font-size,22);
+            @include rem-fallback(margin-top,40);
+            @include rem-fallback(margin-bottom,5);
+        }
+    }
+}
+}
+
+
+/*end*/
+
+
+/* time-line-block */
+.timeline-section {
+    @include rem-fallback(padding,50,0);
+    overflow: hidden;
+    .timestamp-listing {
+        position: relative;
+    }
+    .timestamp-outer-left-line{
+        position: absolute;
+        top: 56%;
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        height: 5px;
+        background:$green;
+        width: 50%;
+        z-index: -1;
+        left: -50%;
+    }
+    .timestamp-outer-right-line {
+        position: absolute;
+        top: 56%;
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        height: 5px;
+        background: $blue;
+        width: 62%;
+        z-index: -1;
+        right: -50%;
+    }
+    .timestamp-block {
+        display: flex;
+        margin: 0 -10px;  
+        @include rem-fallback(padding-top,165);
+        @include rem-fallback(padding-bottom,117);
+        .timestamp-list {
+            position: relative;
+            @include rem-fallback(padding,0,10);
+            flex: 1;
+            &:last-child{
+                .timestamp-inner{
+                    border-color:$blue;
+                    background-color:$blue;
+                    color:$white;
+                }
+            }
+        }
+        .timestamp-inner{
+            background:$white; 
+            @include rem-fallback(height,100);
+            @include rem-fallback(width,100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include rem-fallback(font-size,24);
+            line-height:1.2;
+            font-family: $primary-font;
+            color: $green;
+            border:  5px solid $green;
+            border-radius: 100%;
+        }
+        .timestamp-inner-line { 
+            position: absolute;
+            top: 50%;
+            -moz-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            height: 5px;
+            background: $green;
+            width: 100%;
+            z-index: -1;
+        }
+        .timestamp-content-outer {
+            position: absolute;
+            @include rem-fallback(padding-left,70);
+            .timestamp-content{
+                h5{
+                    @include rem-fallback(margin,0,0,8);
+                    font-family:$primary-font;
+                    text-align:left;
+                    @include rem-fallback(font-size,20);
+                }
+                p{
+                    @include rem-fallback(font-size,14);
+                    line-height: 1.4;
+                    color: $dark-gray;
+                    text-align:left;
+                }
+            }
+        }
+        .timestamp-list{
+            &:nth-child(odd){
+                .timestamp-content-outer{
+                    bottom:100%;
+                }
+                .timestamp-content{
+                    @include rem-fallback(margin-bottom,43);
+                }
+            }
+            &:nth-child(even){
+                .timestamp-content{
+                    @include rem-fallback(margin,40,0,0);
+                }
+            }
+        }
+    } 
+    .timestamp-content-outer{
+        .timestamp-content-inner {
+            position: relative;
+            .border {
+                @include rem-fallback(width,5);
+                @include rem-fallback(height,150);
+                background: $green;
+                position: absolute;
+                left: -12%;
+                z-index: -1;
+                &:after {
+                    content: '';
+                    @include rem-fallback(width,15);
+                    @include rem-fallback(height,15);
+                    background: $green;
+                    display: block;
+                    @include rem-fallback(border-radius,26);
+                    z-index: 1;
+                    position: absolute; 
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+
+
+
+.timestamp-block .timestamp-list:last-child .timestamp-content-inner .border,
+.timestamp-block .timestamp-list:last-child .timestamp-content-inner .border:after {
+    background: $blue;
+}
+.timestamp-block .timestamp-list:nth-child(odd) .timestamp-content-inner .border {
+    bottom: -43px;
+}
+.timestamp-block .timestamp-list:nth-child(odd) .timestamp-content-inner .border:after {
+    top: -14px;
+}
+.timestamp-block .timestamp-list:nth-child(even) .timestamp-content-inner .border {
+    top: -40px;
+}
+.timestamp-block .timestamp-list:nth-child(even) .timestamp-content-inner .border:after {
+    bottom: -14px;
+}
+
+
+/*end*/
+
 

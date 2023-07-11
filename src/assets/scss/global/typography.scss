@@ -55,35 +55,7 @@ a{
 	@include transition(0.3s);
 }
 
-.primary-btn{
-	@include rem-fallback(font-size,14);
-	@include rem-fallback(line-height,18);
-	@include rem-fallback(padding,10,30);
-	@include rem-fallback(height,44);
-	@include transition(all 0.3s);
-	color:$white;
-	width:100%;
-	border:1px solid transparent;
-	font-weight: 400;
-	background-color:$blue;
-	display:flex;
-	align-items: center;
-	justify-content:center;
-	text-align: center;
-	border-radius: 3px;
-	position: relative;
-	z-index: 1;
-	transition: 0.3s all;
-	&:hover{
-		border-color:$blue;
-		background-color: transparent;
-		color:$blue;
-	}
-	
 
-
-
-}
 
 
 
